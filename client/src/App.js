@@ -1,25 +1,74 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <div class="app">
+                <div class="container">
+                    {/* <!-- Header --> */}
+                    <header class="header"></header>
+                    {/* <!-- /Header --> */}
+
+                    {/* <!-- Navbar --> */}
+                    <nav class="navbar"></nav>
+                    {/* <!-- /Navbar --> */}
+
+                    {/* <!-- Main --> */}
+                    <main class="main">
+                        {/* <!-- Chat Panel --> */}
+                        <div class="chat-panel"></div>
+                        {/* <!-- Chat Box --> */}
+                        <div class="chat-box"></div>
+                        {/* <!-- Chat Profile --> */}
+                        <div class="chat-profile"></div>
+                    </main>
+                    {/* <!-- /Main --> */}
+
+                    {/* <!-- Footer --> */}
+                    <footer class="footer">
+                        <div class="copyright">&copy; Chat Fuel. All rights reserved.</div>
+                        <div class="created-by">
+                            <p>
+                                Created by
+                                <span class="developers">Jayesh</span>
+                                &#38;
+                                <span class="developers">Dev</span>
+                                with
+                            </p>
+                            <svg
+                                class="created-by--svg"
+                                dangerouslySetInnerHTML={{
+                                    __html: '<use xlink:href="svg/sprite.svg#icon-heart"></use>',
+                                }}
+                            ></svg>
+                        </div>
+                    </footer>
+                    {/* <!-- /Footer --> */}
+                </div>
+                {/* <!-- /Container --> */}
+
+                {/* <!-- Loading --> */}
+                <div class="loading"></div>
+                {/* <!-- /Loading --> */}
+
+                {/* <!-- Guide --> */}
+                <div class="guide"></div>
+                {/* <!-- /Guide --> */}
+
+                {/* <!-- Alerts --> */}
+                <div class="alerts"></div>
+                {/* <!-- /Alerts --> */}
+
+                {/* <!-- Forms --> */}
+                <div class="forms"></div>
+                {/* <!-- /Forms --> */}
+
+                {/* <!-- Dropdowns --> */}
+                <div class="dropdowns"></div>
+                {/* <!-- /Dropdowns --> */}
+            </div>
+        </div>
+    );
 }
 
 export default App;
