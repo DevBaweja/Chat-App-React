@@ -1,7 +1,9 @@
 import React from 'react';
 
-const ChatBox = () => {
-    return (<div className="chat-box"></div>);
+class ChatBox extends React.Component {
+    render(){
+     return (<div className="chat-box"></div>);
+    }
 }
 
 export default ChatBox;

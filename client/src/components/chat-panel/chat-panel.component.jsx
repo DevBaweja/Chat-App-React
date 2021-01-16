@@ -1,7 +1,9 @@
 import React from 'react';
 
-const ChatPanel = () => {
-    return (<div className="chat-panel"></div>);
+class ChatPanel extends React.Component {
+    render(){
+     return (<div className="chat-panel"></div>);
+    }
 }
 
 export default ChatPanel;
