@@ -1,4 +1,6 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import Header from './components/header.component';
 import Navbar from './components/navbar.component';
@@ -12,7 +14,13 @@ import Alerts from './components/alerts.component';
 import Forms from './components/forms.component';
 import Dropdowns from './components/dropdowns.component';
 
+import { isLogin } from './redux/user/user.actions';
+
 class App extends React.Component {
+    componentDidMount() {
+        const { isLogin } = this.props;
+        isLogin();
+    }
     render() {
         return (
             <div className="app">
@@ -41,4 +49,6 @@ class App extends React.Component {
     }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => bindActionCreators({ isLogin }, dispatch);
+
+export default connect(null, mapDispatchToProps)(App);
