@@ -1,0 +1,52 @@
+.app {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    // ! For Developement
+    overflow: hidden;
+    @include flex();
+}
+
+.container {
+    width: 100vw;
+    // ! For Developement
+    overflow: hidden;
+    @include grid();
+    @include templateRows(6rem minmax(62.5rem, auto) 3.5rem);
+    @include columns(20);
+}
+
+// Header
+.header {
+    @include gridRow(1, 2);
+    @include gridColumn(2, -1);
+
+    @include grid();
+    @include templateColumns(1fr 1fr);
+}
+
+// Navbar
+.navbar {
+    @include gridRow(1, -1);
+    @include gridColumn(1, 2);
+}
+
+// Main
+.main {
+    @include gridRow(2, 3);
+    @include gridColumn(2, -1);
+
+    @include grid();
+    @include templateColumns(1.5fr 3fr 1.45fr);
+}
+
+// Footer
+.footer {
+    @include gridRow(3, -1);
+    @include gridColumn(2, -1);
+
+    @include grid();
+    @include templateColumns(1fr 1fr);
+}

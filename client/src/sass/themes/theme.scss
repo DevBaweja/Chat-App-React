@@ -1,0 +1,921 @@
+// Dark Theme
+@mixin theme($color-grey-1, $color-grey-2, $color-grey-3, $theme) {
+    // Base
+    body {
+        background-color: $color-grey-1;
+    }
+
+    // Dark Theme
+    .app {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary);
+        position: relative;
+    }
+    // ---------------------------
+    // Layout
+    .header {
+        background-color: $color-grey-3;
+        @include adjust($color-grey-3, 50%, $theme, color);
+    }
+
+    .navbar {
+        &.ideal {
+            background-color: $color-primary;
+        }
+        &.user {
+            background-color: $color-primary;
+        }
+    }
+    .main {
+        background-color: $color-grey-2;
+        @include adjust($color-grey-2, 50%, $theme, color);
+    }
+    .footer {
+        background-color: $color-grey-3;
+        @include adjust($color-grey-3, 50%, $theme, color);
+    }
+
+    // --------------------------
+    // Dropdown
+    .about-me,
+    .chat-panel-user,
+    .chat-box-user-in,
+    .chat-box-user-out {
+        // Dropdown
+        &__dropdown {
+            background-color: $color-grey-1;
+            @include adjust($color-grey-1, 50%, $theme, color);
+            border-color: $color-primary;
+
+            &--list {
+            }
+            &--item {
+                &:hover {
+                    background-color: $color-grey-3;
+                }
+            }
+            &--svg {
+                @include adjust($color-grey-3, 50%, $theme, fill);
+            }
+
+            &--span {
+            }
+        }
+    }
+    .chat-box-user-in {
+        // Dropdown
+        &__dropdown {
+            &--svg {
+                &-copy {
+                }
+                &-edit {
+                }
+                &-reply {
+                }
+                &-delete {
+                    fill: $color-danger;
+                }
+            }
+
+            &--span {
+                &-delete {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+    .chat-box-user-out {
+        // Dropdown
+        &__dropdown {
+            &--svg {
+                &-copy {
+                }
+                &-heart {
+                    fill: $color-primary;
+                }
+                &-reply {
+                }
+                &-delete {
+                    fill: $color-danger;
+                }
+            }
+
+            &--span {
+                &-delete {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+
+    .about-me {
+        // Dropdown
+        &__dropdown {
+            &--svg {
+                @include adjust($color-grey-3, 50%, $theme, fill);
+                // Types
+                &-profile {
+                }
+                &-theme {
+                }
+                &-setting {
+                }
+                &-logout {
+                    fill: $color-danger;
+                }
+            }
+            &--span {
+                &-logout {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+    .chat-panel-user {
+        // Dropdown
+        &__dropdown {
+            &--svg {
+                @include adjust($color-grey-3, 50%, $theme, fill);
+
+                &-mark-read,
+                &-unmark-read {
+                }
+                &-pin-chat,
+                &-unpin-chat {
+                }
+                &-mute-notification,
+                &-unmute-notification {
+                }
+                &-add-favourite,
+                &-remove-favourite {
+                    fill: $color-primary;
+                }
+                &-delete {
+                    fill: $color-danger;
+                }
+            }
+            &--span {
+                &-delete {
+                    color: $color-danger;
+                }
+            }
+        }
+    }
+
+    // Alert
+    .alert {
+        color: $color-white;
+        &__message {
+            color: $color-white;
+        }
+        &__svg {
+            fill: $color-white;
+        }
+        &--success {
+            background-color: $color-primary;
+        }
+        &--info {
+            background-color: $color-primary;
+        }
+        &--failure {
+            background-color: $color-danger;
+        }
+    }
+
+    // ---------------------------------
+    // Forms
+    // Login Form And Signup Form
+    .user-login,
+    .user-signup,
+    .user-forget,
+    .user-reset,
+    .user-update {
+        // background-color: $color-primary;
+        background: linear-gradient(to right bottom, $color-primary-light, $color-primary);
+        &__title {
+        }
+        &__form {
+            &--group {
+            }
+            &--label {
+            }
+            &--input {
+                border-bottom-color: transparent;
+                background-color: $color-grey-3;
+                @include adjust($color-grey-2, 80%, $theme, color);
+                &::placeholder {
+                    @include adjust($color-grey-2, 50%, $theme, color);
+                }
+                &:focus {
+                    border-bottom-color: transparent;
+                    &:invalid {
+                        border-bottom-color: $color-white;
+                    }
+                }
+            }
+            &--toggle {
+                &-svg {
+                    @include adjust($color-grey-2, 50%, $theme, fill);
+
+                    &:hover {
+                        @include adjust($color-grey-2, 80%, $theme, fill);
+                    }
+                }
+            }
+            &--btn {
+                background-color: $color-grey-3;
+                color: $color-primary;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: $color-grey-2;
+                }
+            }
+        }
+
+        &__cross {
+            &--svg {
+                fill: $color-grey-2;
+            }
+        }
+    }
+
+    // ----------------------------------
+    // Components
+    // Title
+    .title {
+        color: $color-primary;
+    }
+    // Navbar
+    .navbar {
+        &-user {
+            &__icon {
+                &--svg {
+                    fill: $color-grey-1;
+                }
+            }
+            &__item {
+                &:hover {
+                    background-color: $color-primary-light;
+                }
+                &--selected {
+                    background-color: $color-primary-light;
+                }
+            }
+            &__title {
+                &--svg {
+                    fill: $color-grey-3;
+                }
+            }
+
+            &__photo {
+                &--img {
+                    border-color: $color-primary-light;
+                }
+            }
+        }
+
+        &-ideal {
+            &__icon {
+                &--svg {
+                    fill: $color-grey-2;
+                }
+            }
+        }
+    }
+
+    // CTA
+    .cta {
+        &__btn {
+        }
+
+        &__action {
+            border-color: $color-primary;
+            &:hover {
+                border-color: $color-primary-light;
+            }
+        }
+
+        &__sign-up {
+            background-color: $color-primary;
+            color: $color-grey-3;
+
+            &:hover {
+                background-color: $color-primary-light;
+            }
+        }
+        &__log-in {
+            background-color: $color-grey-3;
+            color: $color-primary;
+            &:hover {
+                color: $color-primary-light;
+            }
+        }
+    }
+
+    .about-me {
+        &__icon {
+            &:hover {
+                background-color: $color-grey-2;
+            }
+        }
+        &__svg {
+            fill: $color-primary;
+            &--logout {
+                fill: $color-danger;
+            }
+        }
+        &__link {
+            color: $color-primary;
+            @include adjust($color-grey-3, 10%, $theme, background-color);
+        }
+    }
+
+    // Chat Panel
+    .chat-panel {
+    }
+
+    // Title
+    .chat-panel-empty,
+    .chat-panel-active-now,
+    .chat-panel-recent-chat,
+    .chat-panel-search,
+    .chat-panel-friend,
+    .chat-panel-request-sent,
+    .chat-panel-request-receive,
+    .chat-panel-instruction {
+        &__title {
+            color: $color-primary;
+            background-color: $color-grey-3;
+        }
+        &__count {
+            @include adjust($color-grey-2, 50%, $theme, color);
+        }
+    }
+
+    .chat-panel-active-now,
+    .chat-panel-recent-chat,
+    .chat-panel-search,
+    .chat-panel-friend,
+    .chat-panel-request-sent,
+    .chat-panel-request-receive {
+        &__item {
+            &:hover {
+                @include adjust($color-grey-1, 10%, $theme, background-color);
+            }
+        }
+        &__link {
+            @include adjust($color-grey-2, 65%, $theme, color);
+        }
+        &__info {
+        }
+    }
+
+    .chat-panel-active-now,
+    .chat-panel-recent-chat,
+    .chat-panel-friend {
+        &__item {
+            &--selected {
+                background-color: $color-grey-1;
+                border-color: $color-primary;
+                &:hover {
+                    background-color: $color-grey-1;
+                }
+            }
+        }
+        // Status
+        &__status {
+            &--online {
+                fill: $color-active;
+                box-shadow: 0 0 0 0.4rem $color-grey-2;
+            }
+
+            &--offline {
+                fill: transparent;
+            }
+        }
+        // Setting
+        &__setting {
+            &--icon {
+                @include adjust($color-grey-2, 40%, $theme, fill);
+                &-add-favourite {
+                    fill: $color-primary;
+                }
+            }
+        }
+        // Option
+        &__option {
+            @include adjust($color-grey-2, 60%, $theme, fill);
+            &:hover {
+                fill: $color-primary;
+            }
+        }
+    }
+    // Search
+    .chat-panel-search {
+        &__input {
+            background-color: $color-grey-3;
+            @include adjust($color-grey-3, 50%, $theme, color);
+            border-color: $color-grey-3;
+
+            &::placeholder {
+                @include adjust($color-grey-3, 25%, $theme, color);
+            }
+
+            &:focus {
+                background-color: $color-grey-1;
+                border-color: $color-primary;
+            }
+        }
+
+        &__button {
+            background-color: $color-primary;
+        }
+
+        &__icon {
+            fill: $color-grey-3;
+        }
+    }
+
+    .chat-panel-search,
+    .chat-panel-request-sent,
+    .chat-panel-request-receive {
+        &__time {
+            @include adjust($color-grey-2, 40%, $theme, color);
+        }
+    }
+    // Instruction
+    .chat-panel-instruction {
+        &__content {
+            @include adjust($color-grey-2, 60%, $theme, color);
+        }
+        &__description {
+            @include adjust($color-grey-2, 40%, $theme, color);
+        }
+        &__span {
+        }
+        &__highlight {
+            color: $color-primary;
+        }
+        &__svg {
+            fill: $color-primary;
+        }
+    }
+    // Ideal and Empty
+    .chat-panel-ideal,
+    .chat-panel-empty {
+        &__title {
+            background-color: $color-grey-3;
+        }
+        &__dimmer {
+            &--circle {
+                fill: $color-grey-3;
+            }
+            &--rect {
+                fill: $color-grey-3;
+            }
+        }
+    }
+
+    // Chat Box
+    .chat-box {
+        border-color: $color-grey-3;
+    }
+    .chat-box-user {
+        background-color: $color-grey-1;
+        @include adjust($color-grey-1, 50%, $theme, color);
+        &__header {
+            background-color: $color-grey-1;
+            border-bottom-color: $color-grey-3;
+            &--back,
+            &--options {
+                &:hover {
+                    background-color: $color-grey-3;
+                }
+
+                &-svg {
+                    fill: $color-primary;
+                }
+            }
+            &--img {
+            }
+            &--content {
+                &-name {
+                    color: $color-primary;
+                }
+                &-status {
+                    @include adjust($color-grey-1, 40%, $theme, color);
+                }
+            }
+        }
+        &__field {
+        }
+        &__main {
+            &--container {
+            }
+            &--message {
+                &-in {
+                    background-color: $color-grey-1;
+                    @include adjust($color-grey-1, 55%, $theme, color);
+                    border-color: $color-grey-3;
+                    &-span {
+                        @include adjust($color-grey-1, 55%, $theme, color);
+                    }
+                }
+                &-out {
+                    background-color: $color-primary;
+                    color: $color-grey-2;
+                    border-color: $color-primary;
+                    &-span {
+                    }
+                    &-info {
+                        &--svg {
+                            fill: $color-grey-2;
+                        }
+                    }
+                }
+            }
+            &--date,
+            &--date-fix {
+                &-span {
+                    background-color: $color-grey-1;
+                    border-color: $color-primary;
+                }
+            }
+            &--date {
+                &-span {
+                }
+            }
+            &--date-fix {
+                &-span {
+                }
+            }
+        }
+        &__footer {
+            &--form {
+            }
+            &--input {
+                @include adjust($color-grey-1, 2.5%, $theme, background-color);
+                @include adjust($color-grey-1, 65%, $theme, color);
+                border-color: $color-primary;
+                caret-color: $color-primary;
+                &:focus {
+                    background-color: $color-grey-1;
+                    box-shadow: 0 0 0.5rem $color-white;
+                }
+                // Instead of ::placeholder
+                &:empty::before {
+                    @include adjust($color-grey-1, 40%, $theme, color);
+                }
+            }
+
+            &--emoji,
+            &--location,
+            &--attach,
+            &--camera,
+            &--send {
+                &:hover {
+                    background-color: $color-primary;
+                }
+                &-svg {
+                    @include adjust($color-grey-3, 50%, $theme, fill);
+                }
+                // xxx
+                &:hover > .chat-box-user__footer--emoji-svg,
+                &:hover > .chat-box-user__footer--location-svg,
+                &:hover > .chat-box-user__footer--attach-svg,
+                &:hover > .chat-box-user__footer--camera-svg {
+                    fill: $color-grey-1;
+                }
+            }
+
+            &--emoji {
+            }
+            &--location {
+            }
+            &--attach {
+            }
+            &--camera {
+            }
+
+            &--send {
+                background-color: $color-primary;
+
+                &:disabled {
+                    background-color: $color-primary;
+                }
+                &:hover {
+                    background-color: $color-primary-light;
+                    box-shadow: 0 0 0.5rem $color-white;
+                }
+                &-svg {
+                    fill: $color-grey-1;
+                }
+            }
+        }
+        // Drop
+        &__drop {
+            &-in {
+                background-color: $color-grey-1;
+                box-shadow: 0.2rem 0.2rem 1rem 0.1rem $color-grey-1;
+                &--svg {
+                    fill: $color-primary;
+                }
+            }
+            &-out {
+                background-color: $color-primary;
+                box-shadow: -0.2rem 0.2rem 0.5rem 0.1rem $color-primary;
+                &--svg {
+                    fill: $color-grey-2;
+                }
+            }
+        }
+    }
+    .chat-box-drag {
+        &--svg {
+            @include adjust($color-grey-3, 50%, $theme, fill);
+            fill: $color-primary;
+        }
+        &--content {
+        }
+        &--classifier {
+            color: $color-primary;
+        }
+    }
+    .chat-box-animate,
+    .chat-box-game {
+        &--title {
+        }
+        &--anchor {
+            @include adjust($color-grey-2, 60%, $theme, color);
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        &--content {
+            @include adjust($color-grey-2, 50%, $theme, color);
+        }
+    }
+
+    // Chat Profile
+    .chat-profile {
+        // User
+        &__user,
+        &__stranger,
+        &__friend,
+        &__receive-request,
+        &__sent-request {
+            &-content,
+            &-avatar,
+            &-about {
+                background-color: $color-grey-1;
+            }
+            // Content
+            &-content {
+                &--img {
+                }
+                &--label {
+                    background-color: $color-primary;
+                }
+                &--svg {
+                    fill: $color-grey-1;
+                }
+
+                &--name {
+                }
+            }
+            // About
+            &-about {
+                &--form {
+                }
+                &--label {
+                }
+                &--edit {
+                }
+                &--input {
+                    background-color: $color-grey-2;
+                    @include adjust($color-grey-2, 70%, $theme, color);
+
+                    &:disabled {
+                        @include adjust($color-grey-2, 60%, $theme, color);
+                        background-color: $color-grey-1;
+                    }
+                }
+                &--svg {
+                    fill: $color-primary;
+                }
+            }
+        }
+        // User
+        &__user {
+            &-content {
+                &--upload {
+                }
+                &--name {
+                    color: $color-primary;
+                }
+                &--input {
+                }
+            }
+
+            &--update {
+                background-color: $color-primary;
+                color: $color-grey-2;
+
+                &:hover {
+                    background-color: $color-primary-light;
+                }
+            }
+
+            &-avatar {
+                &--icon {
+                    background-color: $color-primary;
+                }
+                &--svg {
+                    fill: $color-grey-2;
+                }
+            }
+        }
+
+        &__stranger,
+        &__friend,
+        &__receive-request,
+        &__sent-request {
+            &-content {
+                &--icon {
+                    background-color: $color-primary;
+                    &:active {
+                        background-color: $color-primary-light;
+                    }
+                }
+                &--svg {
+                    fill: $color-grey-1;
+                }
+            }
+        }
+
+        // Setting And Activity
+        &-setting,
+        &-activity {
+            &__heading {
+                color: $color-primary;
+                background-color: $color-grey-3;
+            }
+            &__item {
+            }
+            &__title {
+                &:hover {
+                    @include adjust($color-grey-1, 10%, $theme, background-color);
+                }
+            }
+            &__content {
+                @include adjust($color-grey-2, 60%, $theme, color);
+                &--delete {
+                    color: $color-danger;
+                }
+            }
+            &__description {
+                @include adjust($color-grey-2, 40%, $theme, color);
+            }
+            &__span {
+            }
+            &__svg {
+                fill: $color-primary;
+                &--delete {
+                    fill: $color-danger;
+                }
+            }
+        }
+
+        // Sub Setting
+        &-setting {
+            // Heading
+            &-color,
+            &-wallpaper,
+            &-privacy {
+                &__header {
+                    color: $color-primary;
+                    &--heading {
+                        background-color: $color-grey-3;
+                    }
+                    &--back {
+                        &:hover {
+                            background-color: $color-grey-3;
+                        }
+                        &-svg {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+            }
+            // List
+            &-color,
+            &-wallpaper {
+                &__item {
+                }
+                &__content {
+                }
+                &__icon {
+                    background-color: $color-grey-1;
+                    &--selected {
+                    }
+                }
+                &__svg {
+                    fill: $color-primary;
+                }
+            }
+
+            &-wallpaper {
+                &__content {
+                    border-color: $color-grey-3;
+                    &--selected {
+                        border-color: $color-primary;
+                    }
+                }
+            }
+        }
+
+        // Sub Activity
+        &-activity {
+            &-animate,
+            &-game {
+                // Heading
+                &__header {
+                    color: $color-primary;
+                    &--heading {
+                        background-color: $color-grey-3;
+                    }
+                    &--back {
+                        &:hover {
+                            background-color: $color-grey-3;
+                        }
+                        &-svg {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+                // List
+                &__item {
+                }
+                &__title {
+                    &:hover {
+                        @include adjust($color-grey-1, 10%, $theme, background-color);
+                    }
+                }
+                &__content {
+                    @include adjust($color-grey-2, 60%, $theme, color);
+                    &--delete {
+                        color: $color-danger;
+                    }
+                }
+                &__description {
+                    @include adjust($color-grey-2, 40%, $theme, color);
+                }
+                &__span {
+                }
+                &__svg {
+                    fill: $color-primary;
+                }
+            }
+        }
+    }
+
+    .copyright {
+    }
+    .created-by {
+        p {
+        }
+        &--svg {
+            fill: $color-heart;
+        }
+    }
+    .developers {
+        color: $color-primary-light;
+    }
+
+    // ScrollBar
+    ::-webkit-scrollbar {
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: $color-grey-2;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: $color-primary-light;
+    }
+    // Selection
+    ::selection {
+        color: $color-grey-1;
+        background: $color-primary;
+    }
+}
+
+// Themes
+.dark {
+    @include theme($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-3, dark);
+}
+.light {
+    @include theme($color-grey-light-1, $color-grey-light-2, $color-grey-light-3, light);
+}

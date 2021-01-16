@@ -1,0 +1,337 @@
+// Chat Panel
+.chat-panel {
+}
+
+// Title
+.chat-panel-empty,
+.chat-panel-active-now,
+.chat-panel-recent-chat,
+.chat-panel-friend,
+.chat-panel-request-sent,
+.chat-panel-request-receive,
+.chat-panel-instruction {
+    @include flex(flex-start);
+    @include direction(column);
+
+    margin: 0.5rem;
+    align-items: stretch;
+
+    &__title {
+        @include flex();
+        align-items: stretch;
+        padding: 1rem 0rem;
+        margin: 0.75rem;
+        margin-right: 5rem;
+        margin-left: 5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1rem;
+        line-height: 1.2;
+    }
+
+    &__all {
+        text-align: center;
+        margin: 0 2rem;
+    }
+
+    &__label {
+        font-size: $font-size-regular-2;
+        font-weight: $font-weight-bold;
+    }
+    &__count {
+        margin: 0 0.5rem;
+        letter-spacing: 0.05rem;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-regular;
+    }
+}
+
+// List
+.chat-panel-active-now,
+.chat-panel-recent-chat,
+.chat-panel-friend,
+.chat-panel-search,
+.chat-panel-request-sent,
+.chat-panel-request-receive {
+    &__list {
+        // ! For Development
+        max-height: 55rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        padding: 1rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        font-size: $font-size-regular-1;
+    }
+    &__item {
+        margin: 0.25rem 0;
+        border-radius: 0.2rem;
+        position: relative;
+        transition: all 0.4s;
+        cursor: pointer;
+    }
+    &__link {
+        padding: 0.75rem 0;
+        @include flex();
+    }
+    &__visual {
+        position: relative;
+        @include flex();
+    }
+    &__photo {
+        margin: 0.5rem 1rem;
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+    }
+
+    &__info {
+        margin-left: 0.5rem;
+        flex: 1;
+        @include flex(space-between);
+    }
+    &__name {
+        flex: 1;
+    }
+}
+
+// Specific
+.chat-panel-active-now,
+.chat-panel-recent-chat,
+.chat-panel-friend {
+    &__item {
+        // Selected
+        &--selected {
+            border-left: 0.35rem solid;
+        }
+    }
+    // Status
+    &__status {
+        position: absolute;
+        top: 57.5%;
+        left: 65.5%;
+        height: 1.25rem;
+        width: 1.25rem;
+        border-radius: 50%;
+        &--online {
+        }
+        &--offline {
+        }
+    }
+    // Setting
+    &__setting {
+        @include flex();
+        &--icon {
+            height: 1.6rem;
+            width: 1.6rem;
+            margin: 0 0.25rem;
+            &:last-child {
+                margin-right: 2.5rem;
+            }
+            &-add-favourite {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+
+    // Option
+    &__option {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2rem;
+        width: 2rem;
+        margin: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+        &:hover {
+            transform: scale(1.25);
+        }
+    }
+
+    &__item:hover &__option {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Search
+.chat-panel-search {
+    @include flex(flex-start);
+    @include direction(column);
+
+    margin: 0.5rem;
+    align-items: stretch;
+
+    &__form {
+        @include flex();
+        align-items: stretch;
+        margin: 0.75rem;
+        margin-right: 2.5rem;
+        margin-left: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    &__input {
+        flex-grow: 0;
+        flex-basis: 85%;
+        font-size: $font-size-regular-2;
+        font-family: inherit;
+        border-radius: 1rem;
+        padding: 0.75rem;
+        padding-right: 4rem;
+        padding-left: 2rem;
+        transition: all 0.2s;
+        border: 0.1rem solid;
+        &:focus {
+            flex-basis: 100%;
+        }
+    }
+
+    &__button {
+        margin-left: -4rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        padding: 0.75rem 1rem;
+        border-radius: 0rem 1rem 1rem 0rem;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+.chat-panel-search {
+    &__time {
+        margin-right: 1rem;
+        transition: all 0.2s;
+        opacity: 0;
+    }
+    &__item:hover &__time {
+        // opacity: 1;
+    }
+}
+.chat-panel-request-sent,
+.chat-panel-request-receive {
+    &__time {
+        margin-right: 1rem;
+    }
+}
+
+// Instruction
+.chat-panel-instruction {
+    &__list {
+        // ! For Development
+        max-height: 55rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 1rem;
+    }
+    &__item {
+        @include flex();
+        @include direction(column);
+        align-items: stretch;
+        margin: 1rem 0;
+    }
+    &__combine {
+        @include flex(flex-start);
+        letter-spacing: 0.02rem;
+        border-radius: 0.2rem;
+        padding: 0.5rem 0;
+    }
+    // Content
+    &__content {
+        margin: 0.5rem;
+        flex: 1;
+        @include flex();
+        @include direction(column);
+        align-items: flex-start;
+    }
+
+    &__svg {
+        height: 2rem;
+        width: 3rem;
+        margin: 0.5rem 1rem;
+    }
+    &__span {
+        font-size: $font-size-regular-1;
+    }
+    &__description {
+        font-size: $font-size-instruct;
+    }
+    &__highlight {
+        font-weight: $font-weight-bold;
+    }
+}
+// Ideal and Empty
+// Title
+.chat-panel-ideal {
+    @include flex(flex-start);
+    @include direction(column);
+    align-items: stretch;
+
+    margin: 0.5rem;
+    &__title {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        margin-right: 5rem;
+        margin-left: 5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1rem;
+    }
+}
+
+// Dimmer
+.chat-panel-ideal,
+.chat-panel-empty {
+    &__dimmer {
+        height: 55rem;
+
+        &--item {
+            padding: 1rem 1.5rem;
+            @include grid();
+            grid-template-columns: 1fr 3fr;
+            opacity: 1;
+
+            $elements: 10;
+            @for $i from 1 to $elements {
+                &:nth-child(#{$elements - $i}) {
+                    opacity: $i/10;
+                }
+            }
+        }
+
+        &--circle {
+            @include flex();
+            svg {
+                height: 5rem;
+                width: 5rem;
+
+                // Also change viewBox
+                circle {
+                    cy: 2.5rem;
+                    cx: 2.5rem;
+                    r: 2.5rem;
+                }
+            }
+        }
+        &--rect {
+            @include flex(flex-start);
+            svg {
+                margin-left: 1rem;
+                height: 4rem;
+                width: 18rem;
+                // Also change viewBox
+                rect {
+                    height: 2rem;
+                    width: 18rem;
+                    y: 1rem;
+                    rx: 1rem;
+                    ry: 1rem;
+                }
+            }
+        }
+    }
+}

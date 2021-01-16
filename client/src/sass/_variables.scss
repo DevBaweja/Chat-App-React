@@ -1,0 +1,142 @@
+:root {
+    --color-primary: #6f6f6f;
+    --color-primary-light: #a2a2a2;
+}
+
+// ------------------------
+// Colors
+[data-color='red'] {
+    --color-primary: #fd122e;
+    --color-primary-light: #fe5569;
+}
+[data-color='aqua'] {
+    --color-primary: #01c0c8;
+    --color-primary-light: #31f3fa;
+}
+[data-color='green'] {
+    --color-primary: #08c008;
+    --color-primary-light: #12f112;
+}
+[data-color='blueberry'] {
+    --color-primary: #4286f4;
+    --color-primary-light: #7facf5;
+}
+[data-color='peach'] {
+    --color-primary: #ef5b5b;
+    --color-primary-light: #f18e8e;
+}
+[data-color='blue'] {
+    --color-primary: #0448ff;
+    --color-primary-light: #4c79f5;
+}
+[data-color='pink'] {
+    --color-primary: #f44286;
+    --color-primary-light: #fa78aa;
+}
+[data-color='purple'] {
+    --color-primary: #a613f6;
+    --color-primary-light: #c260f7;
+}
+[data-color='metal'] {
+    --color-primary: #738491;
+    --color-primary-light: #9badbb;
+}
+[data-color='gold'] {
+    --color-primary: #9c9e3c;
+    --color-primary-light: #c5c74f;
+}
+[data-color='yellow'] {
+    --color-primary: #e1ad01;
+    --color-primary-light: #f0d73f;
+}
+[data-color='lilac'] {
+    --color-primary: #b666d2;
+    --color-primary-light: #d189eb;
+}
+[data-color='forest'] {
+    --color-primary: #42af66;
+    --color-primary-light: #76c490;
+}
+[data-color='orange'] {
+    --color-primary: #db4906;
+    --color-primary-light: #fc7c40;
+}
+[data-color='teal'] {
+    --color-primary: #37b49b;
+    --color-primary-light: #71c9b7;
+}
+[data-color='carrot'] {
+    --color-primary: #f37e3b;
+    --color-primary-light: #f39965;
+}
+[data-color='maroon'] {
+    --color-primary: #c70b37;
+    --color-primary-light: #c74765;
+}
+[data-color='blood'] {
+    --color-primary: #f10043;
+    --color-primary-light: #fa4a7c;
+}
+[data-color='mud'] {
+    --color-primary: #965326;
+    --color-primary-light: #b16d3f;
+}
+[data-color='grass'] {
+    --color-primary: #089e37;
+    --color-primary-light: #0dc446;
+}
+[data-color='grey'] {
+    --color-primary: #6f6f6f;
+    --color-primary-light: #a2a2a2;
+}
+
+$color-primary: var(--color-primary);
+$color-primary-light: var(--color-primary-light);
+
+// --------------------------
+// Themes
+// Dark
+$color-grey-dark-1: #161616;
+$color-grey-dark-2: #1e1e1e;
+$color-grey-dark-3: #2a2a2a;
+
+// Light
+$color-grey-light-1: #cfcfcf;
+$color-grey-light-2: #e0e0e0;
+$color-grey-light-3: #efefef;
+
+// ----------------------------
+// Common Theme
+
+$color-white: #fff;
+$color-black: #000;
+$color-success: #20bf6b;
+$color-danger: #dc143c;
+$color-active: #0f0;
+$color-heart: #f00;
+
+// Font Weights
+// Available - 300,400,600,700
+
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
+
+// Font Size
+$fon-size-smaller: 0.8rem;
+$font-size-small: 1rem;
+$font-size-instruct: 1.2rem;
+$font-size-regular: 1.3rem;
+$font-size-regular-1: 1.4rem;
+$font-size-regular-2: 1.6rem;
+$font-size-medium: 1.8rem;
+$font-size-large: 2rem;
+$font-size-larger: 2.2rem;
+$font-size-largest: 2.5rem;
+
+// Shadows
+$shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+$shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);

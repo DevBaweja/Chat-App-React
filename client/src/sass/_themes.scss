@@ -1,0 +1,13 @@
+@import 'themes/theme';
+
+// Scrollbar
+:-webkit-scrollbar {
+}
+
+::-webkit-scrollbar-track {
+    background-color: $color-grey-dark-2;
+}
+::-webkit-scrollbar-thumb {
+}
+::-webkit-scrollbar-thumb:hover {
+}

@@ -1,0 +1,99 @@
+// -------------------------------
+// Dropdown
+.dropdowns {
+    height: 0;
+    width: 0;
+}
+.about-me,
+.chat-panel-user,
+.chat-box-user-in,
+.chat-box-user-out {
+    // Drop Down
+    &__dropdown {
+        position: absolute;
+        z-index: 5;
+        border-radius: 1rem;
+        border-width: 0.1rem;
+        border-style: solid;
+        overflow: hidden;
+        transition: transform 0.5s;
+        transform: scale(0);
+
+        &--list {
+            @include flex();
+            @include direction(column);
+            align-items: stretch;
+            padding: 1rem 0;
+        }
+        &--item {
+            @include flex(flex-start);
+            padding: 0.5rem 0;
+            padding-right: 2.5rem;
+            margin: 0.1rem 0;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        &--svg {
+            height: 1.4rem;
+            width: 1.4rem;
+            margin: 0.5rem;
+            margin-right: 1.5rem;
+            margin-left: 1.5rem;
+        }
+        &--span {
+            font-size: $font-size-regular;
+        }
+    }
+}
+.about-me {
+    &__dropdown {
+        &--list {
+            padding: 1.25rem 0;
+        }
+        &--item {
+            padding: 0.75rem 0;
+            padding-right: 2.5rem;
+            padding-left: 0.5rem;
+        }
+        &--span {
+            font-size: $font-size-regular-1;
+        }
+        &--svg {
+            &-setting,
+            &-logout {
+                height: 1.2rem;
+                width: 1.2rem;
+                margin-left: 1.6rem;
+            }
+        }
+    }
+}
+.chat-panel-user {
+    &__dropdown {
+        // clip-path: polygon(11.25% 5%, 16% 0, 100% 0, 100% 100%, 0 100%, 0 0, 6.5% 0);
+        &--svg {
+            &-unpin-chat {
+                height: 1.2rem;
+                width: 1.2rem;
+            }
+            &-mute-notification {
+                height: 1.6rem;
+                width: 1.6rem;
+            }
+            &-delete {
+                height: 1.3rem;
+                width: 1.3rem;
+            }
+        }
+    }
+}
+.chat-box-user-in {
+    &__dropdown {
+        border-radius: 0.5rem;
+    }
+}
+.chat-box-user-out {
+    &__dropdown {
+        border-radius: 0.5rem;
+    }
+}
