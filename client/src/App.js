@@ -1,70 +1,44 @@
-function App() {
-    return (
-        <div className="app">
-            <div className="container">
-                {/* <!-- Header --> */}
-                <header className="header"></header>
-                {/* <!-- /Header --> */}
+import React from 'react';
 
-                {/* <!-- Navbar --> */}
-                <nav className="navbar"></nav>
-                {/* <!-- /Navbar --> */}
+import Header from './components/header.component';
+import Navbar from './components/navbar.component';
+import ChatPanel from './components/chat-panel/chat-panel.component';
+import ChatBox from './components/chat-box/chat-box.component';
+import ChatProfile from './components/chat-profile/chat-profile.component';
+import Footer from './components/footer.component';
+import Loading from './components/loading.component';
+import Guide from './components/guide.component';
+import Alerts from './components/alerts.component';
+import Forms from './components/forms.component';
+import Dropdowns from './components/dropdowns.component';
 
-                {/* <!-- Main --> */}
-                <main className="main">
-                    {/* <!-- Chat Panel --> */}
-                    <div className="chat-panel"></div>
-                    {/* <!-- Chat Box --> */}
-                    <div className="chat-box"></div>
-                    {/* <!-- Chat Profile --> */}
-                    <div className="chat-profile"></div>
-                </main>
-                {/* <!-- /Main --> */}
+class App extends React.Component {
+    render() {
+        return (
+            <div className="app">
+                <div className="container">
+                    <Header />
+                    <Navbar />
 
-                {/* <!-- Footer --> */}
-                <footer className="footer">
-                    <div className="copyright">&copy; Chat Fuel. All rights reserved.</div>
-                    <div className="created-by">
-                        <p>
-                            Created by
-                            <span className="developers"> Jayesh </span>
-                            &#38;
-                            <span className="developers"> Dev </span>
-                            with
-                        </p>
-                        <svg
-                            className="created-by--svg"
-                            dangerouslySetInnerHTML={{
-                                __html: '<use xlink:href="svg/sprite.svg#icon-heart"></use>',
-                            }}
-                        ></svg>
-                    </div>
-                </footer>
-                {/* <!-- /Footer --> */}
+                    {/* <!-- Main --> */}
+                    <main className="main">
+                        <ChatPanel />
+                        <ChatBox />
+                        <ChatProfile />
+                    </main>
+                    {/* <!-- /Main --> */}
+
+                    <Footer />
+                </div>
+                {/* <!-- /Container --> */}
+                <Loading />
+                <Guide />
+                <Alerts />
+                <Forms />
+                <Dropdowns />
             </div>
-            {/* <!-- /Container --> */}
-
-            {/* <!-- Loading --> */}
-            <div className="loading"></div>
-            {/* <!-- /Loading --> */}
-
-            {/* <!-- Guide --> */}
-            <div className="guide"></div>
-            {/* <!-- /Guide --> */}
-
-            {/* <!-- Alerts --> */}
-            <div className="alerts"></div>
-            {/* <!-- /Alerts --> */}
-
-            {/* <!-- Forms --> */}
-            <div className="forms"></div>
-            {/* <!-- /Forms --> */}
-
-            {/* <!-- Dropdowns --> */}
-            <div className="dropdowns"></div>
-            {/* <!-- /Dropdowns --> */}
-        </div>
-    );
+        );
+    }
 }
 
 export default App;
