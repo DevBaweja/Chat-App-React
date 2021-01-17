@@ -21,7 +21,7 @@ import {
 import { gameType, gameHeading, gameQuote, gameAnchor, gameInstruction } from './game.util';
 import { longDate, shortDate } from './date.util';
 import { relationOptions, relationDefault, relationInterest } from './relation.util';
-// import { addAuthorizationHeaders, getToken, setToken } from './auth.util';
+import { addAuthorizationHeaders, getToken, setToken } from './auth.util';
 import { debounce, throttle } from './api-limit.util';
 
 export {
@@ -67,9 +67,9 @@ export {
     relationOptions,
     relationDefault,
     relationInterest,
-    // addAuthorizationHeaders,
-    // getToken,
-    // setToken,
+    addAuthorizationHeaders,
+    getToken,
+    setToken,
     debounce,
     throttle,
 };

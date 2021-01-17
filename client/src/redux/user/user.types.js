@@ -1,4 +1,5 @@
 const UserActionTypes = {
+    SET_TOKEN: 'SET_TOKEN',
     IS_LOGIN: 'IS_LOGIN',
     SIGN_UP_START: 'SIGN_UP_START',
     SIGN_UP_SUCCESS: 'SIGN_UP_SUCCESS',
