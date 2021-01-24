@@ -19,11 +19,11 @@
         height: 1.4rem;
         width: 1.4rem;
         &--success,
-        &--failure {
-        }
         &--info {
             height: 1.6rem;
             width: 1.6rem;
+        }
+        &--failure {
         }
     }
     &__message {
