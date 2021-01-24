@@ -5,6 +5,7 @@ import { selectUserToken } from '../user/user.selector';
 import UserActionTypes from './user.types';
 import { setTheme, setColor } from '../setting/setting.actions';
 import { setAlert } from '../alert/alert.actions';
+import { setCombined } from '../combined/combined.actions';
 
 import { mode, addAuthorizationHeaders, url, parseData, theme, color, randomItem } from '../../utils/base.util';
 
@@ -34,12 +35,9 @@ export function* isLogin() {
             default: {
                 console.log(data);
                 yield put(setTheme(randomItem(theme)));
-                yield put(setTheme(randomItem(theme)));
-
                 yield put(setColor(randomItem(color)));
-                yield put(setColor(randomItem(color)));
-
                 yield put(setAlert(mode.alert.welcome));
+                yield put(setCombined(mode.combined.ideal));
             }
         }
     } catch (err) {

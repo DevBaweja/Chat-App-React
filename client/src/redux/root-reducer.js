@@ -6,6 +6,7 @@ import modeReducer from './mode/mode.reducer';
 import userReducer from './user/user.reducer';
 import settingReducer from './setting/setting.reducer';
 import alertReducer from './alert/alert.reducer';
+import combineReducer from './combined/combined.reducer';
 
 const persistConfig = {
     key: 'root',
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     user: userReducer,
     setting: settingReducer,
     alert: alertReducer,
+    combined: combineReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
