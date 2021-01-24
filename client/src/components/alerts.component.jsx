@@ -21,7 +21,7 @@ const renderAlert = (text, type, clearAlert) => (
                 onClick={clearAlert}
                 className="alert__cross"
                 dangerouslySetInnerHTML={{
-                    __html: `<use xlink:href="svg/sprite.svg#icon-cross"></use>`,
+                    __html: `<use xlink:href="svg/sprite.svg#icon-cross-small"></use>`,
                 }}
             ></svg>
         </div>
@@ -39,7 +39,7 @@ const Alerts = ({ alert, clearAlert }) => {
         case mode.alert.welcome.old:
             text = 'Welcome back!';
             type = 'success';
-            return renderAlert(text, type, clearAlert);
+            break;
         default:
             return <div className="alerts"></div>;
     }

@@ -30,10 +30,8 @@ export function* isLogin() {
         data = parseData(data);
         switch (data.status) {
             case 'success':
-                console.log(data);
                 break;
             default: {
-                console.log(data);
                 yield put(setTheme(randomItem(theme)));
                 yield put(setColor(randomItem(color)));
                 yield put(setAlert(mode.alert.welcome.new));
