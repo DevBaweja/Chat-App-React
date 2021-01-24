@@ -5,16 +5,18 @@ import storage from 'redux-persist/lib/storage';
 import modeReducer from './mode/mode.reducer';
 import userReducer from './user/user.reducer';
 import settingReducer from './setting/setting.reducer';
+import alertReducer from './alert/alert.reducer';
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['mode', 'user', 'setting'],
+    whitelist: [],
 };
 const rootReducer = combineReducers({
     mode: modeReducer,
     user: userReducer,
     setting: settingReducer,
+    alert: alertReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

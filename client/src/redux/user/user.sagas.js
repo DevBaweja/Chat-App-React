@@ -1,9 +1,10 @@
 import axios from 'axios';
-import { takeLatest, all, call, select } from 'redux-saga/effects';
+import { takeLatest, all, call, put, select } from 'redux-saga/effects';
 import { selectModeMode } from '../mode/mode.selector';
 import { selectUserToken } from '../user/user.selector';
 import UserActionTypes from './user.types';
-import { addAuthorizationHeaders, url } from '../../utils/base.util';
+import { setAlert } from '../alert/alert.actions';
+import { mode, addAuthorizationHeaders, url, parseData } from '../../utils/base.util';
 
 export function* isLogin() {
     let state = {
@@ -23,7 +24,16 @@ export function* isLogin() {
                 // For validation
             })
         );
-        console.log(data);
+        data = parseData(data);
+        switch (data.status) {
+            case 'success':
+                console.log(data);
+                break;
+            default: {
+                console.log(data);
+                yield put(setAlert(mode.alert.welcome));
+            }
+        }
     } catch (err) {
         console.log('Error', err.message);
     }

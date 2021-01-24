@@ -68,6 +68,7 @@ const mode = {
         light: 'light',
     },
     alert: {
+        welcome: 'welcome',
         misc: {
             success: 'misc-success',
             failure: 'misc-failure',

@@ -23,6 +23,7 @@ import { longDate, shortDate } from './date.util';
 import { relationOptions, relationDefault, relationInterest } from './relation.util';
 import { addAuthorizationHeaders, getToken, setToken } from './auth.util';
 import { debounce, throttle } from './api-limit.util';
+import { parseData } from './data.util';
 
 export {
     url,
@@ -72,4 +73,5 @@ export {
     setToken,
     debounce,
     throttle,
+    parseData,
 };
