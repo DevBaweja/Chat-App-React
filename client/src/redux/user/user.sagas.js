@@ -3,8 +3,10 @@ import { takeLatest, all, call, put, select } from 'redux-saga/effects';
 import { selectModeMode } from '../mode/mode.selector';
 import { selectUserToken } from '../user/user.selector';
 import UserActionTypes from './user.types';
+import { setTheme, setColor } from '../setting/setting.actions';
 import { setAlert } from '../alert/alert.actions';
-import { mode, addAuthorizationHeaders, url, parseData } from '../../utils/base.util';
+
+import { mode, addAuthorizationHeaders, url, parseData, theme, color, randomItem } from '../../utils/base.util';
 
 export function* isLogin() {
     let state = {
@@ -31,6 +33,12 @@ export function* isLogin() {
                 break;
             default: {
                 console.log(data);
+                yield put(setTheme(randomItem(theme)));
+                yield put(setTheme(randomItem(theme)));
+
+                yield put(setColor(randomItem(color)));
+                yield put(setColor(randomItem(color)));
+
                 yield put(setAlert(mode.alert.welcome));
             }
         }
@@ -41,7 +49,6 @@ export function* isLogin() {
 
 export function* onIsLogin() {
     yield takeLatest(UserActionTypes.IS_LOGIN, isLogin);
-    console.log('Here');
 }
 
 export function* userSagas() {

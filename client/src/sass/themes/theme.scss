@@ -913,9 +913,9 @@
 }
 
 // Themes
-.dark {
+[data-theme='dark'] {
     @include theme($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-3, dark);
 }
-.light {
+[data-theme='light'] {
     @include theme($color-grey-light-1, $color-grey-light-2, $color-grey-light-3, light);
 }

@@ -5,7 +5,7 @@ export const setTheme = theme => ({
     payload: theme,
 });
 
-export const setToken = color => ({
+export const setColor = color => ({
     type: SettingActionTypes.SET_COLOR,
     payload: color,
 });
