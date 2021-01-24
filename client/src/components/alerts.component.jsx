@@ -1,10 +1,13 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectAlertMode } from '../redux/alert/alert.selector';
+import { clearAlert } from '../redux/alert/alert.actions';
+
 import { mode } from '../utils/base.util';
 
-const renderAlert = (text, type) => (
+const renderAlert = (text, type, clearAlert) => (
     <div className="alerts">
         <div className={`alert alert--${type}`}>
             <svg
@@ -14,26 +17,39 @@ const renderAlert = (text, type) => (
                 }}
             ></svg>
             <span className="alert__message">{text}</span>
+            <svg
+                onClick={clearAlert}
+                className="alert__cross"
+                dangerouslySetInnerHTML={{
+                    __html: `<use xlink:href="svg/sprite.svg#icon-cross"></use>`,
+                }}
+            ></svg>
         </div>
     </div>
 );
 
-const Alerts = ({ alert }) => {
+const Alerts = ({ alert, clearAlert }) => {
     let text;
     let type;
     switch (alert) {
-        case mode.alert.welcome: {
+        case mode.alert.welcome.new:
             text = 'Welcome to #ChatFuel.';
             type = 'success';
-            return renderAlert(text, type);
-        }
+            break;
+        case mode.alert.welcome.old:
+            text = 'Welcome back!';
+            type = 'success';
+            return renderAlert(text, type, clearAlert);
         default:
             return <div className="alerts"></div>;
     }
+    return renderAlert(text, type, clearAlert);
 };
 
 const mapStateToProps = createStructuredSelector({
     alert: selectAlertMode,
 });
 
-export default connect(mapStateToProps)(Alerts);
+const mapDispatchToProps = dispatch => bindActionCreators({ clearAlert }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Alerts);

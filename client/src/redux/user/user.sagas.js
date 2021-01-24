@@ -36,7 +36,7 @@ export function* isLogin() {
                 console.log(data);
                 yield put(setTheme(randomItem(theme)));
                 yield put(setColor(randomItem(color)));
-                yield put(setAlert(mode.alert.welcome));
+                yield put(setAlert(mode.alert.welcome.new));
                 yield put(setCombined(mode.combined.ideal));
             }
         }
